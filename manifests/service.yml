@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "projectdeploycluster-3aaa"
+    labels:
+        app: "projectdeploycluster-3aaa"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+    selector:
+        app: "projectdeploycluster-3aaa"
