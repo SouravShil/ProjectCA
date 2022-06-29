@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "projectdeploycluster-3aaa"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "projectdeploycluster-3aaa"
+  template:
+    metadata:
+      labels:
+        app: "projectdeploycluster-3aaa"
+    spec:
+      containers:
+        - name: "projectdeploycluster-3aaa"
+          image: "projectdeploycr.azurecr.io/projectdeploycluster"
+          ports:
+          - containerPort: 80
